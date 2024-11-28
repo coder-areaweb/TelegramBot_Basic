@@ -1,0 +1,32 @@
+Библиотека Telegram Bot API PHP SDK
+https://github.com/irazasyed/telegram-bot-sdk
+https://telegram-bot-sdk.com/docs/getting-started/installation
+
+Файл, картинка отправка более сложная задача, чем отправка сообщения
+
+Install the Telegram Bot SDK using Composer:
+
+composer require irazasyed/telegram-bot-sdk (если composer глобальный)
+
+Composer: manually локальная установка
+https://getcomposer.org/download/latest-stable/composer.phar
+
+// d:\server538\openserver\modules\php\PHP_8.0\php.exe composer.phar require irazasyed/telegram-bot-sdk
+
+Инициализировать
+https://telegram-bot-sdk.com/docs/getting-started/initialize
+
+require __DIR__.'/vendor/autoload.php';
+
+use Telegram\Bot\Api;
+
+Получить эксзепляр класса 
+$telegram = new Api('YOUR BOT TOKEN');
+
+Далее смотрим Руководство Webhook & Updates
+https://telegram-bot-sdk.com/docs/guides/webhook-updates
+
+Из файла конфиг можем скопировать в браузер посмотреть ошибку с ботом:
+// https://api.telegram.org/bot6089424958:AAFdLmExapCQkd3SjrWOiD36NxcS7mm6t8c/getWebhookInfo
+
+sendMessage функция 

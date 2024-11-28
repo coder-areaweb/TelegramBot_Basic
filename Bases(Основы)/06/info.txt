@@ -1,0 +1,4 @@
+Библиотека Telegram Bot API PHP SDK
+
+sendDocument универсальный метод
+

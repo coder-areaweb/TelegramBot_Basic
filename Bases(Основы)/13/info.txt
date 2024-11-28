@@ -1,0 +1,40 @@
+Запрос ответа на сообщение
+параметр/:
+replay_markup
+key:
+ForceReply - иммитации какого-то вопроса(опросника), с приходом web-приложения отпадает необходимость в использовании
+
+replay_to_message
+
+создать файлик в нем написать логику и не нагромождать index.php, например:
+=================================================================================
+elseif ($text == '/test') {
+    $telegram->sendMessage([
+        'chat_id' => $chat_id,
+        'text' => $phrases['test_command'],
+        'parse_mode' => 'HTML',
+        'reply_markup' => json_encode(['force_reply' => true]),
+    ]);
+} elseif (isset($update['message']['reply_to_message']['text'])) {
+    $question = $update['message']['reply_to_message']['text'];
+    $answer = $update['message']['text'];
+    if ($question == $phrases['test_command']) {
+        if (empty($answer)) {
+            $telegram->sendMessage([
+                'chat_id' => $chat_id,
+                'text' => 'Error answer...',
+            ]);
+            $telegram->sendMessage([
+                'chat_id' => $chat_id,
+                'text' => $phrases['test_command'],
+                'parse_mode' => 'HTML',
+                'reply_markup' => json_encode(['force_reply' => true]),
+            ]);
+        } else {
+            $telegram->sendMessage([
+                'chat_id' => $chat_id,
+                'text' => "Question: {$question}" . PHP_EOL . "Answer: {$answer}",
+            ]);
+        }
+    }
+=================================================================================
