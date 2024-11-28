@@ -1,3 +1,0 @@
-Библиотека Telegram Bot API PHP SDK
-
-sendMediaGroup универсальный метод

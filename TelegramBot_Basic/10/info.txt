@@ -1,4 +1,0 @@
-Keyboard в телеграмм Inline(Встроенная)
-
-inline_keyboard
-
