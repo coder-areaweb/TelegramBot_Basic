@@ -1,0 +1,4 @@
+Keyboard в телеграмм Custom
+Теперь навесим функциональности:
+request_contact
+request_location
